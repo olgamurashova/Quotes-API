@@ -9,10 +9,14 @@ const PORT = process.env.PORT || 4001;
 
 app.use(express.static('public'));
 
-//sending back a random quote
+/*sending back a random quote with the response body 
+{
+  quote: {/* quote object */}
+} */
 app.get('/api/quotes/random', (req, res, next) => {
-  res.send(getRandomElement(quotes));
-});
+  res.send({quote: getRandomElement(quotes)});
+  next();
+})
 
 //returning all quotes
 app.get('/api/quotes', (req, res, next) => {
