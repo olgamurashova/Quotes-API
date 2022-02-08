@@ -18,7 +18,18 @@ app.get('/api/quotes/random', (req, res, next) => {
   next();
 })
 
-//returning all quotes
+//returning all quotes by the same person;
 app.get('/api/quotes', (req, res, next) => {
-  res.send(quotes);
+    if (!req.query.person) {
+      res.send({quotes: quotes});
+  } else {
+    let personQuotes = [];
+    for (let i = 0; i <= quotes.length; i++) {
+        if (quotes[i].person === req.query.person) {
+            personQuotes.push(quotes[i]);
+        }
+    }
+    res.send({quotes: personQuotes});
+    next();
+}     
 });
