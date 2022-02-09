@@ -33,3 +33,15 @@ app.get('/api/quotes', (req, res, next) => {
     next();
 }     
 });
+
+app.post('/api/quotes', (req, res, next) => {
+  const newQuote = {quote: req.body.quote, person: req.body.person};
+  if(!newQuote.quote || !newQuote.person) {
+    res.status(400).send('Invalid request.')
+  } else {
+    quotes.push(newQuote);
+    res.status(201).send(newQuote);
+  }
+});
+
+
