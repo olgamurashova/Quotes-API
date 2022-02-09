@@ -34,6 +34,8 @@ app.get('/api/quotes', (req, res, next) => {
 }     
 });
 
+
+
 //passing in a query string with two properties: quote with the quote text itself, and person with the person who is credited with saying the quote.
 app.post('/api/quotes', (req, res, next) => {
   const newQuote = {quote: req.body.quote, person: req.body.person};
@@ -46,3 +48,8 @@ app.post('/api/quotes', (req, res, next) => {
 });
 
 
+//Adding a PUT route for updating quotes in the data.
+app.put()
+
+//Adding a DELETE route for deleting quotes from the data array.
+app.delete()
