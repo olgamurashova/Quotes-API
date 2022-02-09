@@ -49,7 +49,7 @@ app.post('/api/quotes', (req, res, next) => {
 
 
 //Adding a PUT route for updating quotes in the data.
-app.put()
+app.put();
 
 //Adding a DELETE route for deleting quotes from the data array.
-app.delete()
+app.delete();
