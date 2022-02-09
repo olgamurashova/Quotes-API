@@ -34,6 +34,7 @@ app.get('/api/quotes', (req, res, next) => {
 }     
 });
 
+//passing in a query string with two properties: quote with the quote text itself, and person with the person who is credited with saying the quote.
 app.post('/api/quotes', (req, res, next) => {
   const newQuote = {quote: req.body.quote, person: req.body.person};
   if(!newQuote.quote || !newQuote.person) {
