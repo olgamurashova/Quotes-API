@@ -3,12 +3,10 @@ const getRandomElement = arr => {
   return arr[Math.floor(Math.random() * arr.length)];
 };
 
-module.exports = {
-  getRandomElement
-};
+
 
 //finding index
 
-const index = (element, array) => array.indexOf(element);
+const getIndex = (element, array) => array.indexOf(element);
  
-  
+  module.exports = {getRandomElement, getIndex};
