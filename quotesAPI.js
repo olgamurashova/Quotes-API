@@ -33,7 +33,15 @@ app.get('/api/quotes', (req, res, next) => {
     next();
 }     
 });
-
+// alternative solution
+app.get('/api/quotes', (req, res, next) => {
+  if (req.query.person !== undefined){
+    const byAuthor = quotes.filter(quote => quote.person === req.query.person);
+    res.send({quotes: byAuthor});
+  } else {
+    res.send({quotes});
+  }
+});
 
 
 //passing in a query string with two properties: quote with the quote text itself, and person with the person who is credited with saying the quote.
