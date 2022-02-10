@@ -61,9 +61,9 @@ app.put();
 
 //Adding a DELETE route for deleting quotes from the data array.
 app.delete('/api/quotes/:id', (req, res, next) => {
-   const quoteIndex = getIndex(req.params.id, quotes);
-    if (quoteIndex !== -1) {
-        quotes.splice(quoteIndex, 1);
+   const idIndex = getIndex(req.params.id, quotes);
+    if (idIndex !== -1) {
+        quotes.splice(idIndex, 1);
         res.status(204).send();
     } else {
         res.status(404).send();
