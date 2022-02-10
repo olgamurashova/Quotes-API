@@ -3,7 +3,7 @@ const morgan = require('morgan');
 const app = express();
 
 const { quotes } = require('./data');
-const { getRandomElement } = require('./utils');
+const { getRandomElement, getIndex } = require('./utils');
 
 const PORT = process.env.PORT || 4001;
 
