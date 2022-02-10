@@ -56,10 +56,19 @@ app.post('/api/quotes', (req, res, next) => {
 });
 
 
-//Adding a PUT route for updating quotes in the data.
-app.put();
+//Adding a PUT route for updating quotes in the data if added id to data.js
+app.put('/api/quotes/:id', (req, res, next) => {
+    const id = Number(req.params.id);
+    const idIndex = getIndex(req.params.id, quotes);
+    if (idIndex !== - 1) {
+        quotes[idIndex] = req.body.quote;
+        res.send(quotes[idIndex]);
+    } else {
+        res.status(404).send();
+    }
+});
 
-//Adding a DELETE route for deleting quotes from the data array.
+//Adding a DELETE route for deleting quotes from the data array if id added to data.js
 app.delete('/api/quotes/:id', (req, res, next) => {
    const idIndex = getIndex(req.params.id, quotes);
     if (idIndex !== -1) {
