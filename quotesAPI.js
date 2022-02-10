@@ -78,3 +78,7 @@ app.delete('/api/quotes/:id', (req, res, next) => {
         res.status(404).send();
     }
 });
+
+app.listen(PORT, () => {
+  console.log(`Server is listening on ${port}.`);
+});
