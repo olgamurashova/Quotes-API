@@ -6,3 +6,9 @@ const getRandomElement = arr => {
 module.exports = {
   getRandomElement
 };
+
+//finding index
+
+const index = (element, array) => array.indexOf(element);
+ 
+  
